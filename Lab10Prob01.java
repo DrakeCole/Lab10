@@ -20,16 +20,24 @@ public class Lab10Prob01 {
 				DataInputStream input = new DataInputStream(new FileInputStream("src/people.dat"));
 				DataOutputStream output = new DataOutputStream(new FileOutputStream("src/people-copy.dat"));){
 			{
+				
 				while(true) {
-					output.writeUTF(input.readUTF());
-					output.writeInt(input.readInt());
-					output.writeUTF(input.readUTF());
-					output.writeInt(input.readInt());
-					output.writeDouble(input.readDouble());
+					
+					int age = input.readInt();
+					String name = input.readUTF();
+					String address = input.readUTF();
+					int zip = input.readInt();
+					double salary = input.readDouble();
+					 	
+					output.writeInt(age);
+					output.writeUTF(name);
+					output.writeUTF(address);
+					output.writeInt(zip);
+					output.writeDouble(salary);
 
 
 					System.out.printf(("%s %d %s %d %.2f%n")
-							,input.readUTF(), input.readInt(), input.readUTF(), input.readInt(), input.readDouble());
+							,name, age, address, zip, salary);
 				}
 			}}catch(EOFException ex ) {
 
