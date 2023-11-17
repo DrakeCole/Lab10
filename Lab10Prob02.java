@@ -52,11 +52,19 @@ public class Lab10Prob02 {
 				ex.printStackTrace();
 			}
 		Collections.sort(people);
-		for(int i = 0; i < people.size(); i++) {
-			System.out.println(people.get(i).toString());
+		try(DataOutputStream output = new DataOutputStream(new FileOutputStream("src/people-salary-sorted.dat"));){
+			{
+				
+				for(int i = 0; i < people.size(); i++) {
+					output.writeUTF(people.get(i).toString());
+					
+				}
+				
 		}
+	} catch (IOException ex) {
+		ex.printStackTrace();
 	}
 }
-
+}
 
 
