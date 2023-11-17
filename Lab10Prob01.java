@@ -21,15 +21,15 @@ public class Lab10Prob01 {
 				DataOutputStream output = new DataOutputStream(new FileOutputStream("src/people-copy.dat"));){
 			{
 				while(true) {
-					output.writeInt(input.readInt());
 					output.writeUTF(input.readUTF());
+					output.writeInt(input.readInt());
 					output.writeUTF(input.readUTF());
 					output.writeInt(input.readInt());
 					output.writeDouble(input.readDouble());
 
 
-					System.out.printf(("Age: %d%nFirst and Last name: %s%nAddress: %s%nZip Code: %d%nSalary: %.2f")
-							,input.readInt(), input.readUTF(), input.readUTF(), input.readInt(), input.readDouble());
+					System.out.printf(("%s %d %s %d %.2f%n")
+							,input.readUTF(), input.readInt(), input.readUTF(), input.readInt(), input.readDouble());
 				}
 			}}catch(EOFException ex ) {
 
