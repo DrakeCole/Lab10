@@ -1,5 +1,6 @@
+import java.io.Serializable;
 
-public class Person implements Comparable<Person>{
+public class Person implements Comparable<Person>, Serializable{
 	private int age;
 	private String name = "";
 	private String address = "";
